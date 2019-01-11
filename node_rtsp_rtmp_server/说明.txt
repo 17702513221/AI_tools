@@ -1,0 +1,16 @@
+安装服务器环境
+sudo coffee server.coffee
+npm install -d
+安装vlc播放器
+sudo add-apt-repository ppa:n-muench/vlc
+sudo apt-get update 
+sudo apt-get install vlc
+启动
+cd node-rtsp-rtmp-server
+sudo coffee server.coffee
+要传输的视频
+ffmpeg -re -i head-pose-face-detection-female.mp4 -c:v copy -c:a copy -f flv rtmp://localhost/live/STREAM_NAME
+要传输摄像头
+python3 testCamera.py
+vlc打开网络协议
+rtsp://localhost:80/live/STREAM_NAME
